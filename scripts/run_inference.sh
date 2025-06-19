@@ -18,7 +18,7 @@ echo ">> Inférence $MODEL | Scène: $SCENE | N: $N_IMAGES"
 
 START=$(date +%s.%N)
 
-python scripts/model_wrappers/${MODEL,,}_runner.py \
+docker-compose run --rm ${MODEL,,}_runner python scripts/model_wrappers/${MODEL,,}_runner.py \
   --input-dir "$INPUT_DIR" \
   --output "$OUTPUT_FILE" \
   --N "$N_IMAGES"
